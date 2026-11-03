@@ -72,3 +72,79 @@
         #f2e9dc
     );
 }
+
+
+/* Hide mobile topbar on desktop */
+.mobile-topbar {
+    display: none;
+}
+
+/* Hamburger button */
+.hamburger-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Tablet and mobile */
+@media (max-width: 991px) {
+
+    .kalakriti-layout {
+        flex-direction: column;
+    }
+
+    .mobile-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        background: linear-gradient(135deg, #5c3022, #a65332);
+        padding: 8px 15px;
+        min-height: 65px;
+        position: sticky;
+        top: 0;
+        z-index: 1100;
+    }
+
+    .mobile-welcome {
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .kalakriti-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 270px;
+        max-width: 85%;
+        height: 100vh;
+        z-index: 1200;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .kalakriti-sidebar.show-sidebar {
+        transform: translateX(0);
+    }
+
+    .desktop-logo {
+        display: none;
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1150;
+    }
+
+    .kalakriti-content {
+        width: 100%;
+        min-width: 0;
+    }
+}
