@@ -1,0 +1,73 @@
+
+
+.form-cls {
+  background: linear-gradient(
+    120deg,
+    #f8d9b5,
+    #e9a477,
+    #d58b5b,
+    #f4c76b,
+    #fbe9cf
+  );
+  background-size: 300% 300%;
+}
+
+
+.form-container {
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+
+.craft-image {
+  object-fit: cover;
+  box-shadow: 0px 10px 25px rgba(92, 48, 25, 0.25);
+  transition: 0.3s ease;
+}
+
+.craft-image:hover {
+  transform: scale(1.02);
+}
+
+
+.form-card {
+  background: linear-gradient(
+    145deg,
+    #fffaf0,
+    #fce8d5,
+    #f8d6b8
+  );
+  border: 2px solid #c58b55 !important;
+  flex-shrink: 0;
+}
+
+.form-labels {
+  color: #713f22;
+}
+
+
+.form-card .form-control {
+  border: 1px solid #c99a72;
+  background-color: #fffdf8;
+}
+
+.form-card .form-control:focus {
+  border-color: #a6532a;
+  box-shadow: 0 0 8px #d9a477;
+}
+
+
+.form-card .btn-primary {
+  background: linear-gradient(
+    90deg,
+    #9c4827,
+    #c47735,
+    #a6532a
+  );
+  border: none;
+}
+
+.form-card .btn-primary:hover {
+  background: #713719;
+}

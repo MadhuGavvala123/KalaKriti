@@ -1,0 +1,74 @@
+.kalakriti-layout {
+    background: #f8f5ef;
+}
+
+/* Sidebar */
+.kalakriti-sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: linear-gradient(
+        180deg,
+        #633d2e 0%,
+        #89553c 50%,
+        #a96f4c 100%
+    );
+}
+
+/* Welcome text */
+.welcome-text {
+    color: #f4dfc8;
+    font-weight: 400;
+}
+
+/* Navigation links */
+.kalakriti-link {
+    display: flex;
+    align-items: center;
+    padding: 13px 15px;
+    margin-bottom: 12px;
+    border-radius: 9px;
+    color: #fff8ef;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.kalakriti-link:hover {
+    background: linear-gradient(90deg, #f2d6b8, #fff0dc);
+    color: #633d2e;
+    transform: translateX(5px);
+}
+
+/* Cart and wishlist badges */
+.kalakriti-link .badge {
+    background: #d8a66e;
+    color: #432b20;
+    border-radius: 20px;
+}
+
+/* Logout */
+.kalakriti-logout {
+    display: block;
+    padding: 13px 15px;
+    border-radius: 9px;
+    background: linear-gradient(90deg, #3f3029, #29211d);
+    color: #ffe6c8;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.kalakriti-logout:hover {
+    background: #f2d6b8;
+    color: #633d2e;
+}
+
+/* Main content */
+.kalakriti-content {
+    min-width: 0;
+    background: linear-gradient(
+        135deg,
+        #faf7f1,
+        #f2e9dc
+    );
+}
