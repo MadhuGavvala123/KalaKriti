@@ -173,7 +173,7 @@ function UNavbar() {
                     <i className="bi bi-box-seam me-2"></i> My Orders
                 </Link>
 
-                <Link className="nav-link kalakriti-logout mt-4" to="/logout" onClick={closeMenu}>
+                <Link className="nav-link kalakriti-logout mt-4" to="/" onClick={closeMenu}>
                     <i className="bi bi-box-arrow-right me-2"></i> Logout
                 </Link>
 

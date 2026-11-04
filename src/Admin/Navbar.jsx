@@ -72,7 +72,7 @@ function Navbar()
             </Link>
 
             <Link className="nav-link rounded-3 p-3 mt-4 text-warning fw-semibold shadow-sm"
-                to="/logout">
+                to="/">
                 Logout
             </Link>
 
