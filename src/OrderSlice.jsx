@@ -6,6 +6,7 @@ var OrderSlice=createSlice(
         {
             orderslist:[],
             myorders:[]
+            
         },
         reducers:
         {
@@ -18,6 +19,7 @@ var OrderSlice=createSlice(
             {
                 state.myorders=state.orderslist.filter((obj)=>obj.username==action.payload)
             }
+           
         }
     }
 )

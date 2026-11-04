@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {  getCartbyusername } from "../CartSlice";
+import { removeItemfromcart } from "../CartSlice";
 import { addtoorders } from "../OrderSlice";
 
 export function Cart()
@@ -9,6 +10,7 @@ export function Cart()
 
     var dispatch=useDispatch()
     var cartitems=useSelector((state)=>state.cart.newcart)
+    var totalOrders = cartitems.reduce((sum, c) => sum + c.quantity, 0);
     useEffect(()=>
     {
         var username=localStorage.getItem("isUserIn");
@@ -25,6 +27,7 @@ export function Cart()
         setDummy(obj)
     }
     function placeOrder(){
+       for (let i = 0; i < dummy.quantity; i++) {
         var orderobj={
             ...dummy,
             username:localStorage.getItem("isUserIn"),
@@ -33,10 +36,13 @@ export function Cart()
         }
         console.log(orderobj);
         dispatch(addtoorders(orderobj))
+        dispatch(removeItemfromcart(orderobj))
+    }
         alert("Order Placed Succesfully!");
     }
     function placeAll() {
     cartitems.forEach((c) => {
+        for (let i = 0; i < dummy.quantity; i++) {
         var orderobj = {
             ...c,
             username: localStorage.getItem("isUserIn"),
@@ -45,6 +51,8 @@ export function Cart()
         };
 
         dispatch(addtoorders(orderobj));
+         dispatch(removeItemfromcart(orderobj))
+    }
     });
 
     alert("All Orders Placed Successfully!");
@@ -85,7 +93,7 @@ export function Cart()
                 }
                 <tr>
     <td  className="text-end fw-bold">
-        Total Orders: {cartitems.length}
+        Total Orders: {totalOrders}
     </td>
 
     <td colSpan="2" className="fw-bold">

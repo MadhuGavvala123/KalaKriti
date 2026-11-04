@@ -4,7 +4,8 @@ var CartSlice=createSlice(
             name:"cart",
             initialState:{
                 cartitems:[],
-                newcart:[]
+                newcart:[],
+                completedItems:[]
             },
             reducers:{
                 addtocart:(state,action)=>
@@ -34,11 +35,18 @@ var CartSlice=createSlice(
                 {
                     state.newcart=state.cartitems.filter((obj)=>obj.username==action.payload)
                 
-                    
+                },
+                 removeItemfromcart:(state,action)=>
+                     {
+                         var ind=state.cartitems.findIndex((obj)=>
+                        (obj.id==action.payload.id&&obj.username==action.payload.username)
+                    )
+                    state.cartitems.splice(ind,1);
+                        
 
-                }
+                     }
             }
         }
 )
-export const{addtocart,removefromcart,getCartbyusername}=CartSlice.actions
+export const{addtocart,removefromcart,getCartbyusername,removeItemfromcart}=CartSlice.actions
 export default CartSlice.reducer
