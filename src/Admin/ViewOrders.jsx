@@ -60,7 +60,7 @@ export function ViewOrders()
                     <td>{c.name}</td>
                     <td>{c.price}</td>
                     <td><img src={c.image} height={100} width={100}></img></td>
-                    <td>{1}</td>
+                    <td>{c.quantity}</td>
                 </tr>
                     ))
                 }

@@ -30,29 +30,33 @@ export function Cart()
        for (let i = 0; i < dummy.quantity; i++) {
         var orderobj={
             ...dummy,
+             quantity: 1,
             username:localStorage.getItem("isUserIn"),
             userPhone:phone,
             userAddress:address
         }
         console.log(orderobj);
         dispatch(addtoorders(orderobj))
-        dispatch(removeItemfromcart(orderobj))
+        
     }
+        dispatch(removeItemfromcart(orderobj))
         alert("Order Placed Succesfully!");
     }
     function placeAll() {
     cartitems.forEach((c) => {
-        for (let i = 0; i < dummy.quantity; i++) {
-        var orderobj = {
-            ...c,
-            username: localStorage.getItem("isUserIn"),
-            userPhone: phone,
-            userAddress: address
-        };
+        for (let i = 0; i < c.quantity; i++) {
+            var orderobj = {
+                ...c,
+                quantity: 1,
+                username: localStorage.getItem("isUserIn"),
+                userPhone: phone,
+                userAddress: address
+            };
 
-        dispatch(addtoorders(orderobj));
-         dispatch(removeItemfromcart(orderobj))
-    }
+            dispatch(addtoorders(orderobj));
+        }
+
+        dispatch(removeItemfromcart(c));
     });
 
     alert("All Orders Placed Successfully!");
@@ -101,7 +105,7 @@ export function Cart()
     </td>
 
     <td colSpan="5">
-        <button className="btn btn-success" data-bs-target="#ordermodal2" data-bs-toggle="modal" onClick={()=>receivedata(c)} >
+        <button className="btn btn-success" data-bs-target="#ordermodal2" data-bs-toggle="modal" onClick={()=>receivedata(null)} >
             Place All Orders
         </button>
     </td>
@@ -145,7 +149,7 @@ export function Cart()
             <div className="modal-dialog">
                 <div className="modal-content">
                 <div className="modal-header">
-                    <h2>Your Order:{dummy&& dummy.name}</h2>
+                    <h2>All Orders</h2>
                 </div>
                 <div className="modal-body">
                     <div className="form-group">
